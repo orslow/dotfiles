@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- general
+opt.startofline = true
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
@@ -17,8 +20,9 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
--- cursor line
+-- cursor
 opt.cursorline = true
+opt.scrolloff = 5
 
 -- appearance
 opt.termguicolors = true

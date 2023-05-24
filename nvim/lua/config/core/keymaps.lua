@@ -24,7 +24,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")

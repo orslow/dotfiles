@@ -32,10 +32,10 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")
 
     use("christoomey/vim-system-copy")
-    -- use("hashivim/vim-terraform")
+    use("hashivim/vim-terraform")
 
     -- colorschemes
-    use("yasukotelin/shirotelin")
+    -- use("yasukotelin/shirotelin")
 
     use("szw/vim-maximizer") -- maximizes and restores current window (tmux 'Z')
 

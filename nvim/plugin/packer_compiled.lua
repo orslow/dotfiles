@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "/Users/jueon/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  shirotelin = {
-    loaded = true,
-    path = "/Users/jueon/.local/share/nvim/site/pack/packer/start/shirotelin",
-    url = "https://github.com/yasukotelin/shirotelin"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/jueon/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -168,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jueon/.local/share/nvim/site/pack/packer/start/vim-system-copy",
     url = "https://github.com/christoomey/vim-system-copy"
+  },
+  ["vim-terraform"] = {
+    loaded = true,
+    path = "/Users/jueon/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    url = "https://github.com/hashivim/vim-terraform"
   }
 }
 
