@@ -1,0 +1,51 @@
+live_config_reload: true
+
+window:
+  padding:
+    x: 3
+    y: 3
+
+scrolling:
+  history: 100000
+
+env:
+  TERM: xterm-256color
+
+font:
+  size: 11.0
+  normal: 
+    family: MesloLGS NF
+    style: Regular
+  bold:
+    family: MesloLGS NF
+    style: Bold
+
+colors:
+  primary:
+    foreground: "0x000000"
+    background: "0xFFFFFF"
+  cursor:
+    cursor: "0x9a9a9a"
+    text: "0xfffefe"
+  normal:
+    black: "0x000000"
+    red: "0xc91b00"
+    green: "0x00c200"
+    yellow: "0xc7c400"
+    blue: "0x0225c7"
+    magenta: "0xc930c7"
+    cyan: "0x00c5c7"
+    white: "0xc7c7c7"
+  bright:
+    black: "0x000000"
+    red: "0xc91b00"
+    green: "0x00c200"
+    yellow: "0xc7c400"
+    blue: "0x0225c7"
+    magenta: "0xc930c7"
+    cyan: "0x00c5c7"
+    white: "0xc7c7c7"
+
+mouse_bindings:
+  - { mouse: Middle, action: None }
+

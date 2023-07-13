@@ -76,6 +76,8 @@ return packer.startup(function(use)
     use("jose-elias-alvarez/null-ls.nvim")
     use("jayp0521/mason-null-ls.nvim")
 
+    use("lewis6991/gitsigns.nvim")
+
     if packer_bootstrap then
         require("packer").sync()
     end
