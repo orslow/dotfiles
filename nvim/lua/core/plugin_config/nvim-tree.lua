@@ -7,6 +7,8 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
+
 nvimtree.setup({
   renderer = {
     icons = {
