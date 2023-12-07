@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
     use "szw/vim-maximizer" -- maximizes and restores current window (tmux 'Z')
     use "lewis6991/gitsigns.nvim"
+    use "FabijanZulj/blame.nvim"
     use 'tpope/vim-surround'
 
     -- file explorer
