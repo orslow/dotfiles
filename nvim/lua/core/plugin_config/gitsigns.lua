@@ -4,3 +4,5 @@ if not setup then
 end
 
 gitsigns.setup()
+
+vim.keymap.set('n', '<Leader>bl', ':ToggleBlame<CR>', {})

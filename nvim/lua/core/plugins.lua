@@ -26,13 +26,20 @@ return require('packer').startup(function(use)
     use "nvim-tree/nvim-tree.lua"
 
     -- highlighting
-    use "nvim-treesitter/nvim-treesitter"
+    -- use "nvim-treesitter/nvim-treesitter"
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 
     -- fuzzy finding
     -- use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use {
       'nvim-telescope/telescope.nvim',
-      tag = '0.1.0',
+      tag = '0.1.4',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -60,6 +67,7 @@ return require('packer').startup(function(use)
     -- use 'rafamadriz/friendly-snippets'
 
     -- colorschemes
+    use ({ 'projekt0n/github-nvim-theme' })
     -- use 'yasukotelin/shirotelin'
     -- use 'nelstrom/vim-mac-classic-theme'
     -- use 'romgrk/github-light.vim'

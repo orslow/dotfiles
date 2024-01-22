@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup({
   ensure_installed = {
+    "c",
     "scala",
     "json",
     "python",
@@ -9,8 +10,13 @@ require'nvim-treesitter.configs'.setup({
     "vim",
     "dockerfile",
     "gitignore",
+    "diff",
+    "git_rebase",
+    "gitcommit",
+    "gitattributes",
+    "git_config",
   },
-  sync_install = false,
+  sync_install = true,
   auto_install = true,
   highlight = {
     enable = true,

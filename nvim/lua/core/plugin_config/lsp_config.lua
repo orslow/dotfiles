@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
     "pyright",
     "gopls",
     "sqlls",
+    "terraformls",
     -- "bashls",
     -- "clangd",
     -- "dockerls",
@@ -52,6 +53,11 @@ require("lspconfig").sqlls.setup({
 })
 
 require("lspconfig").gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require("lspconfig").terraformls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
