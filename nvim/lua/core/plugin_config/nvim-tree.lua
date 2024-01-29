@@ -22,6 +22,7 @@ require("nvim-tree").setup({
   },
   actions = {
     open_file = {
+      resize_window = false,
       window_picker = {
         enable = false,
       },
@@ -30,5 +31,6 @@ require("nvim-tree").setup({
   view = {
     width = "15%",
     side = "left",
+    -- preserve_window_proportions = false,
   },
 })
