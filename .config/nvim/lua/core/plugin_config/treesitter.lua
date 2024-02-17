@@ -9,6 +9,7 @@ require'nvim-treesitter.configs'.setup({
     "bash",
     "vim",
     "dockerfile",
+    "lua",
     -- "gitignore",
     -- "diff",
     -- "git_rebase",

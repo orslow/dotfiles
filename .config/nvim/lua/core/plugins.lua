@@ -26,7 +26,6 @@ return require('packer').startup(function(use)
     use "nvim-tree/nvim-tree.lua"
 
     -- highlighting
-    -- use "nvim-treesitter/nvim-treesitter"
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -51,13 +50,13 @@ return require('packer').startup(function(use)
     }
 
     -- lsp for scala
-    use {
-      'scalameta/nvim-metals',
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "mfussenegger/nvim-dap",
-      }
-    }
+    -- use {
+    --   'scalameta/nvim-metals',
+    --   requires = {
+    --     "nvim-lua/plenary.nvim",
+    --     "mfussenegger/nvim-dap",
+    --   }
+    -- }
 
     -- autocompletion
     use "hrsh7th/nvim-cmp"
@@ -74,7 +73,6 @@ return require('packer').startup(function(use)
     -- use 'cormacrelf/vim-colors-github'
     -- use 'josebalius/vim-light-chromeclipse'
 
-
     -- configuring lsp servers
     -- use({ "glepnir/lspsaga.nvim", branch = "main" })
 
@@ -86,9 +84,7 @@ return require('packer').startup(function(use)
     -- use("numToStr/Comment.nvim")
 
     -- nvim-tree icons
-    -- use("kyazdani42/nvim-web-devicons")
-
-    -- statusline
+    use("kyazdani42/nvim-web-devicons")
 
     if packer_bootstrap then
         require("packer").sync()

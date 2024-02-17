@@ -11,14 +11,19 @@ vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
 
 require("nvim-tree").setup({
   renderer = {
-    -- icons = {
-    --   glyphs = {
-    --     folder = {
-    --       arrow_closed = "◯",
-    --       arrow_open = "●",
-    --     },
-    --   },
-    -- },
+    full_name = true,
+    indent_markers = {
+      enable = false,
+    },
+    icons = {
+      -- git_placement = "signcolumn",
+      show = {
+        file = true,
+        folder = false,
+        folder_arrow = true,
+        git = true,
+      }
+    },
   },
   actions = {
     open_file = {

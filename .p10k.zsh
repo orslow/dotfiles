@@ -61,7 +61,7 @@
     command_execution_time    # previous command duration
     virtualenv                # python virtual environment
     context                   # user@host
-    time                      # current time
+    # time                    # current time
     kubecontext               # current kubernetes context (https://kubernetes.io/)
   )
 
