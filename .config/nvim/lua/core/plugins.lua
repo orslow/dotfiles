@@ -1,92 +1,84 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer() -- true if packer was just installed
+local plugins = {
+  "christoomey/vim-system-copy",
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+  "nvim-tree/nvim-tree.lua",
+  "kyazdani42/nvim-web-devicons",
 
-    use "christoomey/vim-system-copy"
-    use "hashivim/vim-terraform"
-    use 'christoomey/vim-tmux-navigator'
-    use "szw/vim-maximizer" -- maximizes and restores current window (tmux 'Z')
-    use "lewis6991/gitsigns.nvim"
-    use "FabijanZulj/blame.nvim"
-    use 'tpope/vim-surround'
+  "hashivim/vim-terraform",
 
-    -- file explorer
-    use "nvim-tree/nvim-tree.lua"
+  -- "christoomey/vim-tmux-navigator",
 
-    -- highlighting
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
+  -- maximizes and restores current window (tmux "Z")
+  "szw/vim-maximizer",
 
-    -- fuzzy finding
-    -- use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-    use {
-      'nvim-telescope/telescope.nvim',
-      tag = '0.1.4',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
+  "lewis6991/gitsigns.nvim",
+  "FabijanZulj/blame.nvim",
 
-    -- managing & installing lsp servers, linters & formatters
-    use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-    }
+  -- highlighting
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
-    -- lsp for scala
-    -- use {
-    --   'scalameta/nvim-metals',
-    --   requires = {
-    --     "nvim-lua/plenary.nvim",
-    --     "mfussenegger/nvim-dap",
-    --   }
-    -- }
+  -- fuzzy finding
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.4",
+    dependencies = { {"nvim-lua/plenary.nvim"} }
+  },
 
-    -- autocompletion
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp"
-    use 'L3MON4D3/LuaSnip'
-    -- use 'saadparwaiz1/cmp_luasnip'
-    -- use 'rafamadriz/friendly-snippets'
+  -- managing & installing lsp servers, linters & formatters
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
 
-    -- colorschemes
-    use ({ 'projekt0n/github-nvim-theme' })
-    -- use 'yasukotelin/shirotelin'
-    -- use 'nelstrom/vim-mac-classic-theme'
-    -- use 'romgrk/github-light.vim'
-    -- use 'cormacrelf/vim-colors-github'
-    -- use 'josebalius/vim-light-chromeclipse'
+  -- lsp for scala
+  -- {
+  --   "scalameta/nvim-metals",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "mfussenegger/nvim-dap",
+  --   }
+  -- }
 
-    -- configuring lsp servers
-    -- use({ "glepnir/lspsaga.nvim", branch = "main" })
+  -- autocompletion
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "L3MON4D3/LuaSnip",
+  -- "saadparwaiz1/cmp_luasnip",
+  -- "rafamadriz/friendly-snippets",
 
-    -- formatting & linting
-    -- use("jose-elias-alvarez/null-ls.nvim")
-    -- use("jayp0521/mason-null-ls.nvim")
+  -- colorschemes
+  "projekt0n/github-nvim-theme",
+  -- "josebalius/vim-light-chromeclipse"
+  -- "yasukotelin/shirotelin",
+  -- "nelstrom/vim-mac-classic-theme",
+  -- "romgrk/github-light.vim",
+  -- "cormacrelf/vim-colors-github",
 
-    -- comment with gc
-    -- use("numToStr/Comment.nvim")
+  -- configuring lsp servers
+  -- "glepnir/lspsaga.nvim", branch = "main",
 
-    -- nvim-tree icons
-    use("kyazdani42/nvim-web-devicons")
+  -- formatting & linting
+  -- "jose-elias-alvarez/null-ls.nvim",
+  -- "jayp0521/mason-null-ls.nvim",
 
-    if packer_bootstrap then
-        require("packer").sync()
-    end
-end)
+  -- comment with gc
+  -- "numToStr/Comment.nvim",
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
