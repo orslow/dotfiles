@@ -13,12 +13,13 @@ TERM = "xterm-256color"
 [font]
 size = 11
 
+# https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
 [font.normal]
-family = "MesloLGS NF"
+family = "MesloLGS Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "MesloLGS NF"
+family = "MesloLGS Nerd Font"
 style = "Bold"
 
 [colors.primary]
