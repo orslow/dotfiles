@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
     "gopls",
     "sqlls",
     "terraformls",
+    "rust_analyzer",
     -- "bashls",
     -- "clangd",
     -- "dockerls",
@@ -57,6 +58,11 @@ require("lspconfig").gopls.setup({
 })
 
 require("lspconfig").terraformls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require("lspconfig").rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
