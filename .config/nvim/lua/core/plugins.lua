@@ -45,13 +45,13 @@ local plugins = {
   },
 
   -- lsp for scala
-  -- {
-  --   "scalameta/nvim-metals",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "mfussenegger/nvim-dap",
-  --   }
-  -- }
+  {
+    "scalameta/nvim-metals",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap",
+    }
+  },
 
   -- autocompletion
   "hrsh7th/nvim-cmp",
