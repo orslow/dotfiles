@@ -1,3 +1,7 @@
-.venv/
-.idea/
 .env
+.venv
+venv
+.idea
+.metals
+.vscode
+.tool-versions

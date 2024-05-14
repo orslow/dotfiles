@@ -21,14 +21,14 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+keymap.set("n", "<leader>z", ":MaximizerToggle<CR>")
 
 -- nvim-tree
 keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>")
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+-- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
