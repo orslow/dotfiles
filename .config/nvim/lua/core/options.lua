@@ -1,3 +1,5 @@
+local global_opt = vim.opt_global
+
 -- general
 vim.opt.startofline = true
 vim.opt.backspace = '2'
@@ -51,3 +53,6 @@ vim.opt.splitbelow = true
 vim.g.terraform_fmt_on_save = 1
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+global_opt.showmatch = true
+-- global_opt.wildignore = { ".git", "*/node_modules/*", "*/target/*", ".metals", ".bloop", ".ammonite", }
