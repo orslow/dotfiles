@@ -1,9 +1,3 @@
--- local status, _ = pcall(vim.cmd, "color lunaperche")
--- if not status then
---     print("Colorscheme not found!")
---     return
--- end
-
 require('github-theme').setup({
   options = {
     -- Compiled file's destination location
@@ -49,6 +43,7 @@ require('github-theme').setup({
     all = {
       StatusLine = { fg = '#FFFFFF', bg = '#000000' },
       StatusLineNC = { fg = '#FFFFFF', bg = '#999999' },
+      IncSearch = { bg = '#ffa261' },
     }
   },
 })
