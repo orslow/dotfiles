@@ -64,7 +64,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "christoomey/vim-system-copy",
+  -- "christoomey/vim-system-copy",
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -78,16 +78,30 @@ require("lazy").setup({
     end,
   },
 
-  -- "hashivim/vim-terraform", -- will be replaced by lsp?
+  {"hashivim/vim-terraform", lazy = false},
 
   -- tmux "z"
   "szw/vim-maximizer",
 
+  -- git
   "lewis6991/gitsigns.nvim",
   "FabijanZulj/blame.nvim",
 
   -- highlighting
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
+  "neovim/nvim-lspconfig",
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+
 
   -- colors
   "projekt0n/github-nvim-theme",
@@ -98,6 +112,6 @@ require("lazy").setup({
   -- "cormacrelf/vim-colors-github",
 
 
-})
+}, {defaults = {lazy = false}})
 
 require('plugins')

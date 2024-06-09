@@ -1,2 +1,6 @@
 require('plugins.nvim-tree')
 require('plugins.colorscheme')
+require('plugins.telescope')
+require('plugins.vim-maximizer')
+require('plugins.lsp')
+require('plugins.vim-terraform')
