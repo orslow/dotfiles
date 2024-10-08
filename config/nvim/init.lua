@@ -87,7 +87,12 @@ require("lazy").setup({
   "szw/vim-maximizer",
 
   -- git
-  "lewis6991/gitsigns.nvim",
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end
+  },
   {
     "FabijanZulj/blame.nvim",
     config = function()
