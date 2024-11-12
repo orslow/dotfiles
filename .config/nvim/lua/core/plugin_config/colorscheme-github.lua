@@ -35,7 +35,7 @@ require('github-theme').setup({
     darken = {                 -- Darken floating windows and sidebar-like windows
       floats = false,
       sidebars = {
-        enabled = true,
+        enable = true,
         list = {},             -- Apply dark background to specific windows
       },
     },
@@ -49,9 +49,11 @@ require('github-theme').setup({
     all = {
       StatusLine = { fg = '#FFFFFF', bg = '#000000' },
       StatusLineNC = { fg = '#FFFFFF', bg = '#999999' },
+      IncSearch = { bg = '#ffa261' },
     }
   },
 })
 
 -- setup must be called before loading
 vim.cmd('colorscheme github_light_high_contrast')
+-- vim.cmd('colorscheme vim')

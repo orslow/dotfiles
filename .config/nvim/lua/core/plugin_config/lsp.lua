@@ -6,6 +6,8 @@ require("mason-lspconfig").setup({
     "gopls",
     "sqlls",
     "terraformls",
+    "eslint",
+    "biome",
     -- "bashls",
     -- "clangd",
     -- "dockerls",
@@ -208,7 +210,7 @@ local setup = function()
   })
 
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "html", "tsserver", "gopls", "clangd", "pyright", "sqlls", "terraformls" }
+  local servers = { "bashls", "dockerls", "html", "gopls", "clangd", "pyright", "sqlls", "terraformls", "eslint", }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end

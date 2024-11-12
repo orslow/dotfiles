@@ -9,8 +9,8 @@ vim.opt.autowrite = true
 vim.opt.autoread = true
 
 -- line numbers
-vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- tabs / indentation
 vim.opt.tabstop = 2

@@ -19,13 +19,39 @@ local plugins = {
 
   "hashivim/vim-terraform",
 
+  -- "alexghergh/nvim-tmux-navigation",
   -- "christoomey/vim-tmux-navigator",
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-q>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-q>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-q>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-q>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-q>TmuxNavigatePrevious<cr>" },
+    },
+  },
 
   -- maximizes and restores current window (tmux "Z")
   "szw/vim-maximizer",
 
   "lewis6991/gitsigns.nvim",
-  "FabijanZulj/blame.nvim",
+  -- "FabijanZulj/blame.nvim",
+  {
+    "FabijanZulj/blame.nvim",
+    config = function()
+      require("blame").setup({
+        date_format = "%Y-%m-%d",
+      })
+    end
+  },
 
   -- highlighting
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
