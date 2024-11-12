@@ -32,10 +32,10 @@ require("nvim-tree").setup({
     width = "15%",
     side = "left",
   },
-  -- update_focused_file = {
-  --   enable = true,
-  --   update_root = true,
-  -- },
+  update_focused_file = {
+    enable = true,
+    update_root = true,
+  },
   -- diagnostics = {
   --   enable = true,
   --   show_on_dirs = true,
