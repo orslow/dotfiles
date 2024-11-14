@@ -112,6 +112,12 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
 
+  {
+    "j-hui/fidget.nvim",
+    tag = "v1.4.5",
+    opts = {},
+  },
+
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
 
@@ -128,8 +134,9 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
-        "j-hui/fidget.nvim",
-        opts = {},
+         "j-hui/fidget.nvim",
+         tag = "v1.4.5",
+         opts = {},
       },
       {
         "mfussenegger/nvim-dap",
