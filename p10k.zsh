@@ -58,11 +58,11 @@
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    command_execution_time    # previous command duration
     virtualenv                # python virtual environment
-    context                   # user@host
-    # time                    # current time
     kubecontext               # current kubernetes context (https://kubernetes.io/)
+    # command_execution_time  # previous command duration
+    # context                 # user@host
+    # time                    # current time
   )
 
   # Basic style options that define the overall prompt look.
@@ -100,7 +100,15 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
   # kubernetes
+  typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
+    # '*prod*'  PROD    # These values are examples that are unlikely
+    # '*test*'  TEST    # to match your needs. Customize them as needed.
+    '*'       DEFAULT)
   typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|flux|fluxctl|stern|kubeseal|skaffold'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=$black
+  # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=5
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⎈'
+
 
   # Blue current directory.
   ### typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
@@ -189,6 +197,8 @@
   # can slow down prompt by 1-2 milliseconds, so it's better to keep it turned off unless you
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
+
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
