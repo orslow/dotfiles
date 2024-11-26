@@ -2,6 +2,8 @@ require('plugins.nvim-tree')
 require('plugins.colorscheme')
 require('plugins.telescope')
 require('plugins.lsp')
+require('plugins.autocomplete')
+require('plugins.nvim-treesitter')
 
 --- general keymap/configs
 
