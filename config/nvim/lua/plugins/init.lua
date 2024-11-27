@@ -2,6 +2,7 @@ require('plugins.nvim-tree')
 require('plugins.colorscheme')
 require('plugins.telescope')
 require('plugins.lsp')
+require('plugins.cmp')
 
 --- general keymap/configs
 
