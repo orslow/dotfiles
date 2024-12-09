@@ -41,21 +41,25 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("lspconfig").pyright.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").sqlls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").gopls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").terraformls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
