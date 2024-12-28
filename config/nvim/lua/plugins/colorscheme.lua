@@ -1,9 +1,3 @@
--- local status, _ = pcall(vim.cmd, "color lunaperche")
--- if not status then
---     print("Colorscheme not found!")
---     return
--- end
-
 require('github-theme').setup({
   options = {
     -- Compiled file's destination location
@@ -35,7 +29,7 @@ require('github-theme').setup({
     darken = {                 -- Darken floating windows and sidebar-like windows
       floats = false,
       sidebars = {
-        enabled = true,
+        enable = true,
         list = {},             -- Apply dark background to specific windows
       },
     },
@@ -49,6 +43,7 @@ require('github-theme').setup({
     all = {
       StatusLine = { fg = '#FFFFFF', bg = '#000000' },
       StatusLineNC = { fg = '#FFFFFF', bg = '#999999' },
+      IncSearch = { bg = '#ffa261' },
     }
   },
 })

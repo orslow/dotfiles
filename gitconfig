@@ -1,9 +1,9 @@
 [core]
-	excludesfile = /Users/jueon/.gitignore
-	editor = nvim
+    excludesfile = /Users/jueon/.gitignore
+    editor = nvim
 [user]
-	name = Jueon Park
-	email = jueon.park@devsisters.com
+    name = Jueon Park
+    email = jueon.park@devsisters.com
 [alias]
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(magenta)%s%C(reset) %C(green)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
@@ -12,4 +12,4 @@
 [pull]
     ff = only
 # [diff]
-# 	external = difft
+#     external = difft

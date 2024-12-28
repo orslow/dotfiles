@@ -1,14 +1,9 @@
--- recommended settings from nvim-tree documentation
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.termguicolors = true
-
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
-
 require("nvim-tree").setup({
   hijack_cursor = true,
-  sync_root_with_cwd = true,
+  -- sync_root_with_cwd = true,
   renderer = {
     full_name = true,
     indent_markers = {
@@ -41,8 +36,12 @@ require("nvim-tree").setup({
     enable = true,
     update_root = true,
   },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-  },
+  -- diagnostics = {
+  --   enable = true,
+  --   show_on_dirs = true,
+  -- },
 })
+
+vim.keymap.set("n", "<leader>et", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>eg", ":NvimTreeFindFile<CR>")

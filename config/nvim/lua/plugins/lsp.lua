@@ -1,7 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    -- "jedi_language_server",
     "pyright",
     "gopls",
     "sqlls",
@@ -42,68 +41,25 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("lspconfig").pyright.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").sqlls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").gopls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
 
 require("lspconfig").terraformls.setup({
+  offset_encoding = "utf-8",
   on_attach = on_attach,
   capabilities = capabilities,
 })
-
--- local metals_config = require("metals").bare_config()
--- 
--- metals_config.settings = {
---   showImplicitArguments = true,
--- }
--- 
--- metals_config.capabilities = capabilities
--- 
--- local dap = require("dap")
--- 
--- dap.configurations.scala = {
---   {
---     type = "scala",
---     request = "launch",
---     name = "RunOrTest",
---     metals = {
---       runType = "runOrTestFile",
---       --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
---     },
---   },
---   {
---     type = "scala",
---     request = "launch",
---     name = "Test Target",
---     metals = {
---       runType = "testTarget",
---     },
---   },
--- }
--- 
--- metals_config.on_attach = function(_, bufnr)
---   require("metals").setup_dap()
--- end
--- 
--- 
--- local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
--- vim.api.nvim_create_autocmd("FileType", {
---   -- NOTE: You may or may not want java included here. You will need it if you
---   -- want basic Java support but it may also conflict if you are using
---   -- something like nvim-jdtls which also works on a java filetype autocmd.
---   pattern = { "scala", "sbt", "java" },
---   callback = function()
---     require("metals").initialize_or_attach(metals_config)
---   end,
---   group = nvim_metals_group,
--- })
