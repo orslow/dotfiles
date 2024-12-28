@@ -41,9 +41,10 @@ alias va='source .venv/bin/activate'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias vf='vi $(fzf)'
 
-export JAVA_HOME='/Users/jueon/.asdf/installs/java/zulu-8.62.0.19/zulu-8.jdk/Contents/Home'
+# export JAVA_HOME='/Users/jueon/.asdf/installs/java/zulu-8.62.0.19/zulu-8.jdk/Contents/Home'
 
 source ~/.scripts/git.sh
 source ~/.scripts/z.sh
 
-source $HOME/.asdf/asdf.sh
+# migrate to mise
+# source $HOME/.asdf/asdf.sh
