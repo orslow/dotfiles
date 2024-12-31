@@ -1,15 +1,18 @@
+local servers = {
+  "pyright",
+  "gopls",
+  "sqlls",
+  "terraformls",
+  "ts_ls",
+  -- "bashls",
+  -- "clangd",
+  -- "dockerls",
+  -- "jsonls",
+}
+
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = {
-    "pyright",
-    "gopls",
-    "sqlls",
-    "terraformls",
-    -- "bashls",
-    -- "clangd",
-    -- "dockerls",
-    -- "jsonls",
-  }
+  ensure_installed = servers
 })
 
 local on_attach = function(_, bufnr)
@@ -40,26 +43,10 @@ end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").pyright.setup({
-  offset_encoding = "utf-8",
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig").sqlls.setup({
-  offset_encoding = "utf-8",
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig").gopls.setup({
-  offset_encoding = "utf-8",
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig").terraformls.setup({
-  offset_encoding = "utf-8",
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+for _, server in ipairs(servers) do
+  require("lspconfig")[server].setup({
+    offset_encoding = "utf-8",
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end

@@ -99,6 +99,7 @@ require("lazy").setup({
       require("blame").setup({
         date_format = "%Y-%m-%d",
         focus_blame = false,
+	colors = {"#5c1968", "#361c7c", "#23adad", "#216956", "#dd318a", "#693e3d", "#21a4e0", "#1b1a4b"},
       })
     end
   },
